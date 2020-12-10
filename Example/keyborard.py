@@ -8,7 +8,7 @@ keysSet1={0:"Q",1:"W",2:"E",3:"R",4:"T",
             5:"A",6:"S",7:"D",8:"F",9:"G",
             10:"Z",11:"Z",12:"C",13:"V",14:"B"}
 def letter(letterIndex,text,letterLight):
-    # Keys
+   
     if letterIndex==0:
         x=0
         y=0
@@ -67,7 +67,7 @@ def letter(letterIndex,text,letterLight):
         cv2.rectangle( keyboard, (x + thickness, y + thickness), (x + width - thickness, y + height - thickness), (255, 255, 255), -1 )
     else:
         cv2.rectangle(keyboard,(x+thickness,y+thickness),(x+width-thickness,y+height-thickness),(255,0,0),thickness)
-    #Text setting
+    
     fontLetter=cv2.FONT_HERSHEY_PLAIN
 
     fontScale=10
