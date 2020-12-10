@@ -120,7 +120,7 @@ def blink(eyePoints, faceMarks):
     centerBottom = midpoint( faceMarks.part( eyePoints[5] ), faceMarks.part( eyePoints[4] ) )
 
     # horizantalLine= cv2.line( frame, leftPoint, rightPoint, (0, 255, 0), 2 )
-    #veritacalLine = cv2.line( frame, centerTop, centerBottom, (0, 255, 0), 2 )
+    #verticalLine = cv2.line( frame, centerTop, centerBottom, (0, 255, 0), 2 )
 
     horizantalLenght = hypot( (leftPoint[0] - rightPoint[0]), (leftPoint[1] - rightPoint[1]) )
     verticalLenght = hypot( (centerTop[0] - centerBottom[0]), (centerTop[1] - centerBottom[1]) )
@@ -163,8 +163,8 @@ def gaze(eyePoints,faceMarks):
 
     gray_eye = eye[minY:maxY, minX:maxX]
     _, thresholdEye = cv2.threshold( gray_eye, 70, 255, cv2.THRESH_BINARY )
-    height, width = threshold_eye.shape
-    leftThresold = threshold_eye[0:height, 0:int( width / 2 )]
+    height, width = thresholdEye.shape
+    leftThresold = thresholdEye[0:height, 0:int( width / 2 )]
     leftSideWhite = cv2.countNonZero( leftThresold )
     rightThresold = thresholdEye[0:height, int( width / 2 ):width]
     rightWhite = cv2.countNonZero( rightThresold )
@@ -173,7 +173,7 @@ def gaze(eyePoints,faceMarks):
 
     if leftSideWhite ==0:
         gazeRatio=1
-    elif right_side_white ==0:
+    elif rightSideWhite ==0:
         gazeRatio=5
     else:
         gazeRatio = leftSideWhite / rightWhite
@@ -200,7 +200,7 @@ while True:
     frames += 1
     gray = cv2.cvtColor( frame, cv2.COLOR_BGR2GRAY )
 
-    frame[row - 50: row, 0: cols] = (255, 255, 255)
+    frame[row - 50: row, 0: col] = (255, 255, 255)
     if keyMenu is True:
         draw()
 
