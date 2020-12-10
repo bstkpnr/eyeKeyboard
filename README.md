@@ -1,0 +1,2 @@
+# eyeKeyboard
+Görüntü işleme teknikleri ile yaptığım göz kontrollü klavye. Python programlama dili, OpenCv, Dlib, Numpy ve Pyglet kütüphaneleri kullanılmıştır. .Projede seçmek istediğim harfi gözüm kapalıyken seçiyorum ve tahtama yazdırıyorum. Klavye geçişlerimi ise gözlerimin sağa veya sola bakılmasıyla klavye geçişlerini yapıyorum. Sağ veya sol klavyeye geçtiğime dair sesli komutlar alıyorum.( Proje var olan bir projedir. Öğrenme amaçlı olarak uygulanmıştır.)
